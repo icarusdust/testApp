@@ -16,9 +16,10 @@ workflows:
             node: 15.13.0
         scripts:
             - name: Install npm dependencies
-              script: |
-                expo eject
+              script: |     
                 npm install
+                npm install --global expo-cli
+                expo eject
             - name: Set Android SDK location
               script: |
                 echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
